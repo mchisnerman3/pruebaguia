@@ -1,6 +1,9 @@
  $('#tabla1').DataTable( {
     rowId: 'documento',   
-  select: true,
+   select: {
+            style: 'single',
+             info: false
+        },
     ajax: {
         url: 'datos.php',
         dataSrc: 'obras'
@@ -22,8 +25,7 @@ var table = $('#tabla1').DataTable();
 
 $('#tabla2').DataTable( {
     rowId: 'id',   
-  select: true,
-    ajax: {
+      ajax: {
         url: 'datos2.php',
         dataSrc: 'obras'
     },
@@ -42,9 +44,37 @@ $('#tabla2').DataTable( {
 
 var table2 = $('#tabla2').DataTable();
 
+$('#tabla4').DataTable( {
+    rowId: 'id',   
+  select: {
+            style: 'multi',
+             info: false
+        },
+    ajax: {
+        url: 'datos2.php',
+        dataSrc: 'obras'
+    },
+
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+        },
+    columns: [
+        { data: 'id' },
+        { data: 'nombre_producto' },
+        { data: 'total_producto' },
+    ],
+    "order": [[ 0, 'desc' ]]
+
+});
+
+var table4 = $('#tabla4').DataTable();
+
 $('#tabla3').DataTable( {
     rowId: 'numero_guia',   
-    select: true,
+    select: {
+            style: 'single',
+             info: false
+        },
     ajax: {
         url: 'datos3.php',
         dataSrc: 'obras'
@@ -155,6 +185,27 @@ $("#dni").keydown(function(event) {
     }
  } );
 
+$('#aguias').click( function () {
+      $('#altaguia').modal('show');
+});
+$('#guianueva').click( function () {
+ 
+$.ajax({
+            url: "sumar.php",
+            type: "POST",
+            data: {
+                valores: table4.rows( { selected: true } ).data().toArray(),
+                },
+                success : function(data) {
+                  document.getElementById('contenidoguia').innerHTML=data;
+
+                  $('#tabla3').DataTable().ajax.reload();
+                },
+        error : function(request, status, error) {
+        },
+        });
+     
+});
 
 $('#finalusuario').click( function () {
 event.preventDefault();

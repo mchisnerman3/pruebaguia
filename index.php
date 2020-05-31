@@ -6,7 +6,7 @@
     <title>Listado de solicitudes</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"/>
-      <link href='https://cdn.datatables.net/select/1.3.0/css/select.dataTables.min.css' rel="stylesheet" />
+      <link href='https://cdn.datatables.net/select/1.3.1/css/select.dataTables.min.css' rel="stylesheet" />
       <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.5.0/css/bootstrap4-toggle.min.css" rel="stylesheet">
 </head>
 
@@ -52,7 +52,6 @@
   </div>
 </div>
 
-
 <div class="modal fade" id="quitarusuario" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -65,19 +64,59 @@
       <div class="modal-body">
         <p id="prueba2" name="prueba2"></p>
       </div>
-<div class="form-group col-12">
-  <div class="textfield-box">
-    <label for="cat6">Motivo</label>
-    <textarea class="form-control" id="cat6" name="cat6" required rows="3"></textarea>
-  </div>
-</div>
-
-      <div class="modal-footer">
+    <div class="form-group col-12">
+      <div class="textfield-box">
+        <label for="cat6">Motivo</label>
+        <textarea class="form-control" id="cat6" name="cat6" required rows="3"></textarea>
+      </div>
+    </div>
+  <div class="modal-footer">
         <button type="button" class="btn btn-danger" name="botonrechazar" id="botonrechazar"data-dismiss="modal">Quitar Usuario</button>
       </div>
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="altaguia" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Guia Nueva (Elegir los productos con SHIFT+CLICK y Luego "Alta Guia"</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form>
+          
+ <table id="tabla4" class="table table-striped table-bordered hover" style="width:100%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre Producto</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+      </table>
+
+
+
+
+
+
+
+          <p id="contenidoguia" name="contenidoguia"></p>
+          <button type="button" class="btn btn-success" name="guianueva" id="guianueva">Alta Guia</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" name="botonrechazar" id="botonrechazar"data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div class="modal fade" id="verdetalle" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
@@ -169,6 +208,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.5.0/js/bootstrap4-toggle.min.js"></script>
 <script src="https://kit.fontawesome.com/04dddb7be6.js"></script>
 <script src="admin.js"></script>
